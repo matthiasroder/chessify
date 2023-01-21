@@ -34,7 +34,7 @@ def analyze_position(fen):
     print(progress, fen, score)
     return(score)
 
-games = open_games('data/lichess_matthiasroder_2023-01-21.pgn')
+games = open_games('./data/lichess_matthiasroder_2023-01-21.pgn')
 fens = create_fens(games)
 df = pd.DataFrame(games, columns=['pgn'])
 df['id'] = df['pgn'].apply(lambda x: x.headers['Site'].split('/')[-1:][0])
