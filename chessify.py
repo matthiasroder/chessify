@@ -51,6 +51,12 @@ def find_positions(file, fen, outfile):
     os.system(command)
     print('Done')
 
+def open_position(fen):
+    lichess = '"https://lichess.org/analysis/'
+    url = lichess + fen + '"'
+    print(f'Opening {url}')
+    os.system(f'open {url}')
+
 if __name__ == '__main__':
     games = open_games('./data/lichess_licoach_2023-01-23.pgn')
     fens = create_fens(games)
